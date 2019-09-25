@@ -1,22 +1,74 @@
- <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>JavaHello</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>hello.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>HelloServlet</display-name>
-    <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>bean.HelloServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
-  </servlet-mapping>
-</web-app>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="JavaHello">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Web App Libraries.libraryclasspath"/>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath">
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/annotations-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/catalina.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/ecj-4.12.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/el-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jasper-el.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jasper.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jaspic-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/jsp-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/servlet-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-cs.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-de.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ko.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-pt-BR.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-ru.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-i18n-zh-CN.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/websocket-api.jar"/>
+    </path>
+    <path id="JavaHello.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+        <path refid="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="JavaHello.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+</project>
