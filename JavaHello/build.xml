@@ -44,13 +44,13 @@
         <pathelement location="../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/lib/websocket-api.jar"/>
     </path>
     <path id="JavaHello.classpath">
-        <pathelement location="build/classes"/>
+        <pathelement location="/var/jenkins_home/workspace/JavaProject1"/>
         <path refid="Web App Libraries.libraryclasspath"/>
         <path refid="EAR Libraries.libraryclasspath"/>
         <path refid="Apache Tomcat v9.0 [Apache Tomcat v9.0].libraryclasspath"/>
     </path>
     <target name="init">
-        <mkdir dir="build/classes"/>
+        <mkdir dir="/var/jenkins_home/workspace/JavaProject1"/>
         <copy includeemptydirs="false" todir="/var/jenkins_home/workspace/JavaProject1">
             <fileset dir="src">
                 <exclude name="**/*.java"/>
@@ -65,7 +65,7 @@
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+        <javac debug="true" debuglevel="${debuglevel}" destdir="/var/jenkins_home/workspace/JavaProject1" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="JavaHello.classpath"/>
         </javac>
